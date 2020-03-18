@@ -111,14 +111,14 @@ void splitNode(Node *curNode) {
 
             if (curNode->parentNode->keys.size() > order-1) {
                 
-                //cout<<"aa bhi raha hai idhar?     "<<curNode->parentNode->keys.size()<<endl;
+              
                 curNode->parentNode->nNodes--;
                 // for (int i = 0; i< curNode->parentNode->keys.size(); i++)
                 //     cout<<curNode->parentNode->keys.at(i)<<endl;
                 splitNode(curNode->parentNode);
              }
             // else {
-            //     cout<< "Poora nahi hua" << curNode->parentNode->keys.size() <<endl;
+            
             // }
             
         }
@@ -126,7 +126,7 @@ void splitNode(Node *curNode) {
     }
     else {                  //INTERNAL NODES 
         Node *rNode = new Node(false);
-        //cout << "hello this is the internalnode style"<<endl;
+      
         int x = order/2;
         //cout<< x << endl;
         //cout << curNode->keys.size() << endl;
@@ -147,7 +147,7 @@ void splitNode(Node *curNode) {
                 curNode->children.at(i)->parentNode = rNode;
             }
                 curNode->children.erase(curNode->children.begin() + curNode->children.size()/2 + 1, curNode->children.end());
-            // cout<< "BACCHO KA SIZE KE BAAER ME BHI TOH SOCHO" <<endl;
+            
             // cout << curNode->children.size() << endl;
             // cout << rNode->children.size() << endl;
         }
@@ -157,7 +157,7 @@ void splitNode(Node *curNode) {
                 curNode->children.at(i)->parentNode = rNode;
             }
             curNode->children.erase(curNode->children.begin() + curNode->children.size()/2, curNode->children.end());
-            // cout<< "BACCHO KA PAPA KE BAAER ME BHI TOH SOCHO" <<endl;
+           
             // cout << curNode->children.size() << endl;
             // cout << rNode->children.size() << endl;
         }
@@ -271,7 +271,7 @@ void search(Node *curNode,double k,ofstream& o_file) {
         }
     }
     else {
-        //cout<<"I am a sahab tbh"<<curNode->record.size()<<endl;
+        
         int found = 0;
         for (int i = 0 ;i<curNode->record.size();i++) {
             if (k == get<0>(curNode->record.at(i))) {
